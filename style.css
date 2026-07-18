@@ -385,6 +385,15 @@ nav a:hover{
             color: #cbd5e1;
             font-size: 14px;
         }
+        .project-button{
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #3b82f6;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
            .modal {
                display: none;
                position: fixed;
