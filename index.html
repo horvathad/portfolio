@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólió</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
 </head>
 
 <body>
+
     <header>
         <div class="container header-content">
             <h1>Horváth András Dávid</h1>
@@ -34,9 +36,46 @@
                         </p>
 
                         <a href="#projects" class="button">Projektjeim</a>
-                        <a href="img/56f4694c-c766-41ed-923a-698653a029c5.jpg" class="button">Tanúsítványom</a> 
-                    
-                    
+                        <a href="#" id="certificateBtn" class="button">Tanúsítványom</a>
+
+                        <div id="certificateModal" class="modal">
+
+                            <span class="close" id="certificateClose">&times;</span>
+                            <button id="certificateClose" class="certificate-close" type="button"></button>
+                            <img src="img/tanusitvany.jpg" class="modal-img">
+
+                        </div>
+
+                        <script>
+                            const certificateButton = document.getElementById("certificateBtn");
+                            const certificateModal = document.getElementById("certificateModal");
+                            const certificateClose = document.getElementById("certificateClose");
+
+                            function closeCertificate() {
+                                certificateModal.style.display = "none";
+                            }
+
+                            certificateButton.addEventListener("click", function (event) {
+                                event.preventDefault();
+                                certificateModal.style.display = "flex";
+                            });
+
+                            certificateClose.addEventListener("click", closeCertificate);
+
+                            certificateModal.addEventListener("click", function (event) {
+                                if (event.target === certificateModal) {
+                                    closeCertificate();
+                                }
+                            });
+
+                            document.addEventListener("keydown", function (event) {
+                                if (event.key === "Escape") {
+                                    closeCertificate();
+                                }
+                            });
+
+                        </script>
+
                     </div>
                     <div class="hero-image">
                         <img src="img/arckep.jpg" alt="Profilkép">
